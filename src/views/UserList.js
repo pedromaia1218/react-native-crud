@@ -1,9 +1,23 @@
 import React from 'react'
-import { View, FlatList } from 'react-native'
+import { View, FlatList, Alert } from 'react-native'
 import { Avatar, Icon, ListItem, Button } from 'react-native-elements'
 import users from '../data/users'
 
 export default props => {
+
+    function confirmUserDeletion(item) {
+        Alert.alert('EXCLUIR USUÁRIO', 'Deseja mesmo excluir o usuário?', [
+            {
+                text: 'Sim',
+                onPress() {
+                    console.warn( item.name + ' deletadoh')
+                }
+            },
+            {
+                text: 'Não'
+            }
+        ])
+    }
 
     function getUserItem({ item }) {
         return (

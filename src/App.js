@@ -25,7 +25,9 @@ export default props => {
                         }
                     }}
                 />
-                <Stack.Screen name="UserForm" component={UserForm} />
+                <Stack.Screen name="UserForm" component={UserForm}
+                    options={{ title: 'Cadastro de usuários' }}
+                 />
             </Stack.Navigator>
         </NavigationContainer>
     )

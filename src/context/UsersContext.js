@@ -3,8 +3,9 @@ import users from '../data/users'
 
 const UsersContext = createContext({})
 const initialState = { users }
+
 const actions = {
-    createUser(state,action){
+    createUser(state,action ){
         const item = action.payload
         return {
             ...state,

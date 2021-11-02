@@ -3,7 +3,7 @@ import { View, FlatList, Alert } from 'react-native'
 import { Avatar, Icon, ListItem, Button } from 'react-native-elements'
 import UsersContext from '../context/UsersContext'
 
-export default props => {
+const UserList = props => {
 
     const { state, dispatch } = useContext(UsersContext)
 
@@ -58,3 +58,5 @@ export default props => {
         </View>
     )
 }
+
+export default UserList

@@ -4,9 +4,24 @@ import users from '../data/users'
 const UsersContext = createContext({})
 const initialState = { users }
 const actions = {
+    createUser(state,action){
+        const item = action.payload
+        return {
+            ...state,
+            users: [...state.users, item]
+        }
+    },
+    updateUser(state,action){
+        const item = action.payload
+        return {
+            ...state,
+            users: state.users.map(u => u.id === item.id ? item : u)
+        }
+    },
     deleteUser(state, action) {
         const item = action.payload
         return {
+            ...state,
             users: state.users.filter(u => u.id !== item.id)
         }
     }
